@@ -1,0 +1,53 @@
+// Settings file to override Foundation variables
+
+// You can find the variables for each component at the bottom of their
+// doc page. We tried to name them to where they'd make sense just by reading them.
+// Go to http://foundation.zurb.com/docs/ to find what you need.
+
+$em-base: 14px;
+
+
+$small-screen: 650px;
+$medium-screen: 1280px;
+$large-screen: 1440px;
+
+
+/* ------- Font Faces ------- */
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600);
+
+/* ------- Font weight classes ------- */
+$font-weight-light: 300;
+
+
+/* ------- Body --------- */
+$body-bg: #fff;
+$body-font-color: #444;
+$body-font-family: 'Source Sans Pro', Arial, sans-serif;
+$body-font-weight: 400;
+$body-font-style: normal;
+
+/* ------- Headers --------- */
+$header-font-family: 'Source Sans Pro', Arial, sans-serif;
+$header-font-weight: 300;
+$header-font-style: normal;
+$header-font-color: #222;
+$header-line-height: 1.4;
+$header-top-margin: .2em;
+$header-bottom-margin: .5em;
+$header-text-rendering: optimizeLegibility;
+
+/* ------- Colors --------- */
+$primary-color: #999;
+$secondary-color: #666;
+$alert-color: #444;
+$success-color: #00ff00;
+
+$shiny-edge-size: 0 1px 0;
+$shiny-edge-color: rgba(#fff, .5);
+$shiny-edge-active-color: rgba(#000, .2);
+
+/* ------- hr line --------- */
+$hr-border-width: 1px;
+$hr-border-style: solid;
+$hr-border-color: #666;
+$hr-margin: emCalc(20px);
