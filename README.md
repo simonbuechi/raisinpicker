@@ -17,3 +17,13 @@ Go to [buechi.name/raisinpickerdemo](http://buechi.name/raisinpickerdemo/ "Raisi
 
 1. User name "John Doe", password "johndoe56"  
 2. User name "Max Muster", password "maxmuster 56"
+
+Branches & Tags
+---------------
+master:    
+gh-pages: This branch is as Github page for the project website on http://raisin-picker.com
+
+Sources
+-------
+Drupal: http://www.drupal.org  
+Icons: http://www.iconfinder.com/icondetails/106138/128/circle_full_icon  
