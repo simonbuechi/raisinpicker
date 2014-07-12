@@ -5,7 +5,6 @@
 
 /* ------- Body --------- */
 body {
-	background-image: url(../images/bg.png);
 	font-size: 16px;
 	line-height: 1.6;
 	color:$body-font-color;
@@ -20,17 +19,15 @@ strong {
 
 }
 .slogan {
-	font-weight: 400;
-	display: inline;
-	padding-left: 10px;
-	font-size: 16px;
-	color: $body-font-color;
+	font-weight: $font-weight-light;
+	display: block;
+	font-size: 26px;
 }
 
 /* ------- Headers --------- */
 h1, h2, h3, h4, h5, h6 {
   font-family: $header-font-family;
-  font-weight: $header-font-weight;
+  font-weight: $body-font-weight;
   font-style: normal;
   color: $header-font-color;
   line-height: 1.2;
@@ -40,23 +37,24 @@ h1 {
 	margin-bottom: 10px;
 	font-size: 40px; 
 	padding-bottom: 10px;
-  	//letter-spacing: -1px;
+  	font-weight: 600;
 }
 h1 a, h1 a:hover, h1 a:focus {
   	text-decoration: none;	
 	color: $header-font-color;
 }
 h2 {
-	font-weight: 600;
 	font-size: 26px;
 	margin: 60px 0 0 0;
+		text-transform: uppercase;
 }
 h3 {
-	text-transform: uppercase;
-	font-size: 16px;
+	font-weight: $header-font-weight;
+	font-size: 18px;
 	margin: 20px 0 5px 0;
 	border-bottom: 1px solid #ccc;
 	padding: 4px 0;
+	text-transform: uppercase;
 }
 h4 {
 	font-size: 40px;
@@ -77,14 +75,17 @@ a:hover, a:focus {
 	cursor: pointer;
 	font-weight: normal;
 	text-decoration: none;
-	text-align: center;
-	padding: 8px 20px;
+	text-align: left;
+	padding: 2px 10px;
 	background-color: #666;
 	color: white;
 	line-height: 40px;
+	width: 100%;
+	display: block;
+	border-radius: 2px;
 }
 .button:hover, .button:focus {
-  background-color: #333;
+  background-color: #888;
     color: white;
   -webkit-transition: background-color .2s linear;
 	transition: background-color .2s linear;
@@ -99,8 +100,8 @@ ul  {
 }
 ul li {
 /*	border-top: 1px solid #ddd; */
-	padding: 5px 0;
-	margin-left: 15px;
+	padding: 4px 0;
+	margin-left: 18px;
 }
 ul li ul {
   margin-left: 1.28571em;
@@ -135,4 +136,4 @@ nav a {
 }
 
 
-//@import "foundation/components/orbit";
+@import "foundation/components/orbit";
