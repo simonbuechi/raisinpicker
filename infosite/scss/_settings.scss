@@ -19,8 +19,8 @@ $large-screen: 1440px;
 $font-weight-light: 400;
 
 /* ------- Body --------- */
-$body-bg: #ECEFF1;
-$body-font-color: #455A64;
+$body-bg: #CFD8DC;
+$body-font-color: #37474F;
 $body-font-family: 'Source Sans Pro', Arial, sans-serif;
 $body-font-weight: 400;
 $body-font-style: normal;
@@ -29,7 +29,7 @@ $body-font-style: normal;
 $header-font-family: 'Source Sans Pro', Arial, sans-serif;
 $header-font-weight: 600;
 $header-font-style: normal;
-$header-font-color: #455A64;
+$header-font-color: #263238;
 $header-line-height: 1.4;
 $header-top-margin: .2em;
 $header-bottom-margin: .5em;
@@ -48,5 +48,5 @@ $shiny-edge-active-color: rgba(#000, .2);
 /* ------- hr line --------- */
 $hr-border-width: 1px;
 $hr-border-style: solid;
-$hr-border-color: #666;
+$hr-border-color: #78909C;
 $hr-margin: emCalc(20px);
