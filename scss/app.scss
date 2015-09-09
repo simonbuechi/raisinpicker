@@ -21,7 +21,9 @@ strong {
 .slogan {
 	font-weight: $font-weight-light;
 	display: block;
-	font-size: 26px;
+	font-size: 16px;
+	letter-spacing: 0;
+
 }
 
 /* ------- Headers --------- */
@@ -35,26 +37,26 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
 	margin-top: 20px;
 	margin-bottom: 10px;
-	font-size: 40px; 
+	font-size: 54px; 
 	padding-bottom: 10px;
   	font-weight: 600;
+/*	letter-spacing: 1px; */
 }
 h1 a, h1 a:hover, h1 a:focus {
   	text-decoration: none;	
 	color: $header-font-color;
 }
 h2 {
-	font-size: 26px;
+	font-size: 38px;
 	margin: 60px 0 0 0;
-		text-transform: uppercase;
+/*	letter-spacing: 1px; */
 }
 h3 {
-	font-weight: $header-font-weight;
-	font-size: 18px;
+/*	font-weight: $header-font-weight; */
+	font-size: 22px;
 	margin: 20px 0 5px 0;
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #B0BEC5;
 	padding: 4px 0;
-	text-transform: uppercase;
 }
 h4 {
 	font-size: 40px;
@@ -66,7 +68,7 @@ a {
 	text-decoration: underline;
 }
 a:hover, a:focus {
-	color: #000;
+	color: #263238;
     text-decoration: none;
 }
 /* ------- Button --------- */
@@ -77,7 +79,7 @@ a:hover, a:focus {
 	text-decoration: none;
 	text-align: left;
 	padding: 2px 10px;
-	background-color: #666;
+	background-color: #455A64;
 	color: white;
 	line-height: 40px;
 	width: 100%;
@@ -85,7 +87,7 @@ a:hover, a:focus {
 	border-radius: 2px;
 }
 .button:hover, .button:focus {
-  background-color: #888;
+  background-color: #546E7A;
     color: white;
   -webkit-transition: background-color .2s linear;
 	transition: background-color .2s linear;
@@ -111,7 +113,7 @@ ul li ul {
 
 /* ------- footer --------- */
 .footer {
-	border-top: 1px solid #ccc;
+	border-top: 1px solid #B0BEC5;
 	margin-top: 40px;
 }
 
@@ -122,7 +124,7 @@ ul li ul {
   border-color: #d9d9d9;
   margin-bottom: 1.25em;
   padding: 1.25em;
-  background: #f2f2f2; 
+  background: #CFD8DC; 
 }
 
 /* ------- Navigation --------- */

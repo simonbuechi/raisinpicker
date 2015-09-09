@@ -23,21 +23,21 @@
 	font-size: 16px;
 	float: left;
 	text-align: center;
-	background: #eee;
+	background: #CFD8DC;
 	padding: .75em;
 	margin: .75em 1.5em .75em 0;
 	width: 7.5em;
-	border: 1px solid #ddd;
+	border: 1px solid #B0BEC5;
 }
 .glyph:hover {
-	background: #666;
-	color: #fff;
-	border: 1px solid #666;
+	background: #455A64;
+	color: #ECEFF1;
+	border: 1px solid #37474F;
 }
 .notactive, .notactive:hover {
-	color: #bbb;
-	background: #eee;
-	border: 1px solid #ddd;
+	color: #90A4AE;
+	background: #CFD8DC;
+	border: 1px solid #B0BEC5;
 }
 .fs1 {
 	font-size: 3em;
