@@ -1,0 +1,864 @@
+/* Settings for global.css */
+/* ------- Body --------- */
+/* ------- Headers --------- */
+/* ------- Colors --------- */
+/* ------- mixins --------- */
+/* ------------- css for specific modules ------------- */
+/* ------------- Superfish menu	------------- */
+/* line 4, ../scss/_modules.scss */
+.sf-menu.sf-horizontal.sf-shadow ul {
+  background: none;
+  padding: 0 !important;
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-left-radius: 0px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomleft: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border: 1px #cccccc solid;
+  background-color: #fff;
+  box-shadow: 5px 5px 6px 0px #666666;
+}
+
+/* line 17, ../scss/_modules.scss */
+.sf-menu.sf-style-default {
+  float: left;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+/* line 22, ../scss/_modules.scss */
+.sf-menu.sf-style-default.sf-navbar {
+  width: 100%;
+}
+
+/* line 25, ../scss/_modules.scss */
+.sf-menu.sf-style-default ul {
+  padding-left: 0;
+}
+
+/* line 28, ../scss/_modules.scss */
+.sf-menu.sf-style-default a {
+  border: 0px;
+  border-left: 0px;
+  padding: 0.75em 1em;
+}
+
+/* line 34, ../scss/_modules.scss */
+.sf-menu.sf-style-default a,
+.sf-menu.sf-style-default a:visited {
+  text-decoration: none;
+  color: #222;
+}
+
+/* line 38, ../scss/_modules.scss */
+.sf-menu.sf-style-default a.sf-with-ul {
+  padding-right: 2.25em;
+}
+
+/* line 41, ../scss/_modules.scss */
+.sf-menu.sf-style-default.rtl a.sf-with-ul {
+  padding-left: 2.25em;
+  padding-right: 1em;
+}
+
+/* line 45, ../scss/_modules.scss */
+.sf-menu.sf-style-default span.sf-description {
+  color: #222;
+  display: block;
+  font-size: 0.8em;
+  line-height: 1.5em;
+  margin: 5px 0 0 5px;
+  padding: 0;
+}
+
+/* line 54, ../scss/_modules.scss */
+.sf-menu.sf-style-default li,
+.sf-menu.sf-style-default.sf-navbar {
+  background: transparent;
+}
+
+/* line 57, ../scss/_modules.scss */
+.sf-menu.sf-style-default li li {
+  background: #fff;
+}
+
+/* line 60, ../scss/_modules.scss */
+.sf-menu.sf-style-default li li li {
+  background: #fff;
+}
+
+/* line 67, ../scss/_modules.scss */
+.sf-menu.sf-style-default li:hover,
+.sf-menu.sf-style-default li.sfHover,
+.sf-menu.sf-style-default a:focus,
+.sf-menu.sf-style-default a:hover,
+.sf-menu.sf-style-default a:active {
+  background: #ddd;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #eeeeee), color-stop(1, #dddddd));
+  background: -moz-linear-gradient(top center, #eeeeee 0%, #dddddd 100%);
+  outline: 0;
+}
+
+/* line 73, ../scss/_modules.scss */
+.sf-sub-indicator {
+  background: url("../images/arrows-777777.png") no-repeat -10px -100px;
+}
+
+/* line 76, ../scss/_modules.scss */
+.sf-menu.rtl .sf-sub-indicator {
+  background: url("../images/arrows-777777-rtl.png") no-repeat -10px -100px;
+}
+
+/* ------------- CK Editor ------------- */
+/* line 83, ../scss/_modules.scss */
+a.ckeditor_links {
+  display: none;
+}
+
+/* ------------- Flags ------------- */
+/* ------------- Tag Tree ------------- */
+/* line 93, ../scss/_modules.scss */
+.view-tag-tree .view-content div ul li {
+  margin-left: 30px;
+  list-style-type: square;
+}
+
+/* line 97, ../scss/_modules.scss */
+.view-tag-tree .view-content {
+  margin-top: 30px;
+}
+
+/* ------------- Basics	------------- */
+/* line 5, ../scss/global.scss */
+html {
+  overflow-y: scroll;
+  font-size: 13px;
+  line-height: 13px;
+}
+
+/* line 10, ../scss/global.scss */
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url(../images/bg-wall.png);
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.4em;
+  color: #444;
+  font-style: normal;
+  font-weight: normal;
+  margin-bottom: 0.5em;
+}
+
+/* line 16, ../scss/global.scss */
+p {
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.4em;
+  color: #444;
+  font-style: normal;
+  font-weight: normal;
+  margin-bottom: 0.5em;
+}
+
+/* line 19, ../scss/global.scss */
+.field-name-body, .field-name-body p, .textblock {
+  font-family: "Open Sans", Arial, serif;
+  font-size: 1.05em;
+  line-height: 1.6em;
+  color: #222;
+  font-style: normal;
+  font-weight: normal;
+  margin-bottom: 1em;
+}
+
+/* line 23, ../scss/global.scss */
+a {
+  color: #444444;
+  text-decoration: underline;
+}
+/* line 26, ../scss/global.scss */
+a:link, a:visited {
+  text-decoration: underline;
+}
+/* line 29, ../scss/global.scss */
+a:hover {
+  color: #999999;
+  text-decoration: none;
+}
+/* line 33, ../scss/global.scss */
+a:focus, a:active {
+  color: black;
+  text-decoration: underline;
+  top: 2px;
+}
+
+/* line 39, ../scss/global.scss */
+li {
+  margin: 4px 0;
+}
+
+/* line 42, ../scss/global.scss */
+li a.active {
+  color: #444444;
+}
+
+/* line 46, ../scss/global.scss */
+pre, code {
+  font-family: consolas, courier, monospace;
+  font-size: 1em;
+  line-height: 1.2em;
+  white-space: pre;
+  background-color: #ccf;
+  color: black;
+  border: 1px solid #999999;
+  padding: 4px 6px;
+  margin: 4px 0;
+  float: right;
+}
+
+/* ------------- Lists	------------- */
+/* line 59, ../scss/global.scss */
+ol {
+  list-style: decimal;
+}
+
+/* line 62, ../scss/global.scss */
+ul {
+  list-style: square;
+  margin-bottom: 10px;
+}
+
+/* line 66, ../scss/global.scss */
+ul.menu {
+  margin-bottom: 0;
+}
+
+/* line 70, ../scss/global.scss */
+ul ul,
+ol ol {
+  padding-top: 0.5em;
+}
+
+/* line 74, ../scss/global.scss */
+.node ol,
+.node ul {
+  padding-left: 30px;
+}
+
+/* line 78, ../scss/global.scss */
+.node ul.inline,
+.node ol.inline {
+  padding-left: 0;
+}
+
+/* line 81, ../scss/global.scss */
+ul li.leaf {
+  list-style-type: none;
+  list-style-image: none;
+}
+
+/* line 85, ../scss/global.scss */
+.item-list ul li {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 89, ../scss/global.scss */
+ul.view-block-dashboard {
+  padding-left: 20px;
+  list-style-type: square;
+  margin-bottom: 0px;
+}
+
+/* line 94, ../scss/global.scss */
+ol.view-block-dashboard-ordered {
+  padding-left: 20px;
+  list-style-type: decimal;
+  margin-bottom: 0px;
+}
+
+/* ------------- Headings	------------- */
+/* line 100, ../scss/global.scss */
+h1 {
+  font-family: "Open Sans", Arial, serif;
+  font-size: 2.5em;
+  line-height: 1.2em;
+  color: #222;
+  font-style: normal;
+  letter-spacing: normal;
+  margin: 0 0 20px 0;
+  font-weight: normal;
+}
+
+/* line 105, ../scss/global.scss */
+h2 {
+  font-family: "Open Sans", Arial, serif;
+  font-size: 1.4em;
+  line-height: 1.2em;
+  color: #222;
+  font-style: normal;
+  letter-spacing: normal;
+  margin: 25px 0 5px 0;
+  border-bottom: 1px solid #cccccc;
+  padding: 4px 0;
+  font-weight: bold;
+}
+
+/* line 112, ../scss/global.scss */
+h3, h4, h5, h6 {
+  font-family: "Open Sans", Arial, serif;
+  font-size: 1.2em;
+  line-height: 1.2em;
+  color: #222;
+  font-style: normal;
+  letter-spacing: normal;
+  margin: 25px 0 5px 0;
+  border-bottom: 1px solid #cccccc;
+  padding: 4px 0;
+  font-weight: bold;
+}
+
+/* line 119, ../scss/global.scss */
+.site-slogan {
+  float: left;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.4em;
+  color: #444;
+  font-style: normal;
+  font-weight: normal;
+  margin-bottom: 0.5em;
+  color: #999999;
+  margin: 0;
+  border: 0;
+}
+
+/* line 126, ../scss/global.scss */
+.site-name {
+  float: left;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.4em;
+  color: #444;
+  font-style: normal;
+  font-weight: normal;
+  margin-bottom: 0.5em;
+  font-size: 13px;
+  margin: 0 10px 0 0;
+  border: 0;
+}
+
+/* line 137, ../scss/global.scss */
+.site-name a,
+.site-name a:active,
+.site-name a:hover,
+.site-name a:focus,
+.site-name a:visited {
+  text-decoration: none;
+  color: #222222;
+  border: 0;
+}
+
+/* ------------- wireframe	------------- */
+/* line 143, ../scss/global.scss */
+.zone-branding {
+  margin-bottom: 5px;
+  padding-top: 5px;
+  border-top: 1px #cccccc solid;
+  margin-top: 25px;
+}
+
+/* line 149, ../scss/global.scss */
+.zone-header {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  border-bottom: 1px #cccccc solid;
+  margin-bottom: 15px;
+}
+
+/* ------------- Menu	------------- */
+/* line 156, ../scss/global.scss */
+.block-user-menu, .block-superfish {
+  float: left;
+  display: inline;
+  margin-right: 20px;
+}
+
+/* line 161, ../scss/global.scss */
+.block-user-menu ul li {
+  float: left;
+  list-style-type: none;
+  list-style-image: none;
+}
+
+/* line 166, ../scss/global.scss */
+.block-search-form {
+  float: left;
+  padding-top: 5px;
+}
+
+/* line 170, ../scss/global.scss */
+form#search-block-form div div div .form-submit {
+  display: none;
+}
+
+/* line 173, ../scss/global.scss */
+form#search-block-form div div div .form-text {
+  width: 180%;
+}
+
+/* line 176, ../scss/global.scss */
+.branding-data {
+  float: left;
+}
+
+/* ------------- comments	------------- */
+/* line 180, ../scss/global.scss */
+.comment {
+  margin: 10px;
+  border: 1px #cccccc solid;
+  padding: 5px 10px;
+}
+
+/* line 185, ../scss/global.scss */
+.pane-node-comment-form {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+/* line 190, ../scss/global.scss */
+#edit-author--2 {
+  display: none;
+}
+
+/* ------------- Taxonomy terms	------------- */
+/* line 196, ../scss/global.scss */
+.field-type-taxonomy-term-reference .field-items,
+.field-type-taxonomy-term-reference div.field-label,
+.field-type-taxonomy-term-reference div .field-item {
+  display: block;
+}
+
+/* line 199, ../scss/global.scss */
+.field-type-taxonomy-term-reference div .field-item a {
+  background: #cccccc;
+  color: #444444;
+  padding: 4px;
+  margin: 0;
+  text-decoration: none;
+  border: 0;
+  line-height: 2.5;
+}
+
+/* line 208, ../scss/global.scss */
+.field-type-taxonomy-term-reference div .field-item a:hover {
+  background: #999999;
+  text-decoration: none;
+  color: white;
+  -webkit-transition: background-color 0.2s linear;
+  transition: background-color 0.2s linear;
+}
+
+/* line 214, ../scss/global.scss */
+.hierarchical-select-item-separator {
+  background: #cccccc;
+  line-height: 2;
+  padding: 4px;
+}
+
+/* ------------- Field view	------------- */
+/* line 220, ../scss/global.scss */
+.field .field-label {
+  font-weight: normal;
+}
+
+/* line 227, ../scss/global.scss */
+.field-name-body,
+.field-name-field-tags,
+.field-name-field-links,
+.field-name-field-rating,
+.field-type-taxonomy-term-reference {
+  padding-bottom: 15px;
+}
+
+/* line 232, ../scss/global.scss */
+.field-items,
+.field-label,
+.field-item {
+  display: inline;
+  font-weight: normal;
+}
+
+/* line 236, ../scss/global.scss */
+th.field-label {
+  display: table-cell;
+}
+
+/* line 239, ../scss/global.scss */
+.field-name-field-links div .field-item a {
+  margin: 0 4px;
+}
+
+/* line 242, ../scss/global.scss */
+.field-name-field-rating div .field-item {
+  font-weight: bold;
+  padding: 4px 10px;
+  color: white;
+  background-color: #444444;
+  margin-left: 10px;
+}
+
+/* ------------- varia	------------- */
+/* line 250, ../scss/global.scss */
+.more-link {
+  text-align: left;
+}
+
+/* line 253, ../scss/global.scss */
+.section-header {
+  margin-top: 0;
+}
+
+/* line 257, ../scss/global.scss */
+.view-recently-added-knowledge,
+.view-recently-updated-knowledge {
+  color: #444444;
+}
+
+/* line 260, ../scss/global.scss */
+.metablock div p {
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  color: #999999;
+  line-height: 1.6;
+  font-family: "Open Sans", Arial, sans-serif;
+}
+
+/* line 268, ../scss/global.scss */
+.nowrap {
+  display: inline;
+}
+
+/* line 271, ../scss/global.scss */
+.filter-guidelines, .filter-help {
+  display: none;
+}
+
+/* line 274, ../scss/global.scss */
+.filter-wrapper {
+  padding: 0;
+}
+
+/* line 277, ../scss/global.scss */
+.form-item-current-entity {
+  display: none;
+}
+
+/* line 280, ../scss/global.scss */
+.collapsed {
+  margin-bottom: 5px;
+}
+
+/* line 283, ../scss/global.scss */
+.form-required {
+  color: #444444;
+}
+
+/* line 286, ../scss/global.scss */
+.tabledrag-handle {
+  border: 0;
+}
+
+/* ------------- Text Selection Color	------------- */
+/* line 291, ../scss/global.scss */
+::selection {
+  background: #FAEB96;
+}
+
+/* line 294, ../scss/global.scss */
+::-moz-selection {
+  background: #FAEB96;
+}
+
+/* ------------- messages ------------- */
+/* ------------- Tabs ------------- */
+/* line 302, ../scss/global.scss */
+ul.primary {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 308, ../scss/global.scss */
+ul.primary li a, ul.primary li a:link, ul.primary li a:visited {
+  color: white;
+  background: #999999;
+  text-decoration: none;
+  border: 0;
+  padding: 6px 12px;
+  margin: 1px;
+  line-height: 30px;
+}
+/* line 70, ../scss/_settings.scss */
+ul.primary li a:hover, ul.primary li a:link:hover, ul.primary li a:visited:hover {
+  background: #666666;
+  -webkit-transition: background-color 0.2s linear;
+  transition: background-color 0.2s linear;
+}
+
+/* line 312, ../scss/global.scss */
+ul.primary li {
+  display: block;
+  float: left;
+}
+
+/* ------------- Panel tabs ------------- */
+/* line 317, ../scss/global.scss */
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button, .ui-widget {
+  font-family: "Open Sans", Arial, sans-serif;
+}
+
+/* line 320, ../scss/global.scss */
+.ui-tabs {
+  border: 0px;
+}
+
+/* line 323, ../scss/global.scss */
+.ui-tabs .ui-tabs-panel {
+  border: 0px;
+  padding: 10px 0 0 0;
+}
+
+/* line 327, ../scss/global.scss */
+ul.ui-tabs-nav {
+  background-color: transparent;
+  background-image: none;
+  border: 0px;
+  border-bottom: 1px #cccccc solid;
+  border-radius: 0;
+}
+
+/* line 334, ../scss/global.scss */
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  border-color: #cccccc;
+  border-radius: 0;
+  padding: 3px;
+  background-color: white;
+}
+
+/* line 340, ../scss/global.scss */
+.ui-state-default a, .ui-widget-content .ui-state-default a, .ui-widget-header .ui-state-default a {
+  color: #444444;
+}
+
+/* line 343, ../scss/global.scss */
+.ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
+  background-color: #cccccc;
+}
+
+/* line 346, ../scss/global.scss */
+.ui-tabs .ui-tabs-nav li a {
+  padding: 4px 10px;
+}
+
+/* ------------- Buttons	------------- */
+/* line 354, ../scss/global.scss */
+input,
+button,
+select,
+textarea {
+  margin: 0;
+  vertical-align: middle;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 13px;
+}
+
+/* line 364, ../scss/global.scss */
+button,
+input[type="reset"],
+input[type="submit"],
+input[type="button"],
+#edit-cancel:focus, #edit-cancel {
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.4em;
+  color: #444;
+  font-style: normal;
+  font-weight: normal;
+  margin-bottom: 0.5em;
+  color: white;
+  background: #999999;
+  text-decoration: none;
+  border: 0;
+  padding: 6px 12px;
+  margin: 1px;
+  -webkit-appearance: none;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding;
+  border-radius: 0;
+  outline: 0;
+  overflow: visible;
+  width: auto;
+  text-shadow: none;
+  font-weight: normal;
+  text-decoration: none;
+  vertical-align: baseline;
+  position: relative;
+  top: 1px;
+}
+/* line 82, ../scss/_settings.scss */
+button:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover,
+#edit-cancel:focus:hover, #edit-cancel:hover {
+  background: #666666;
+  -webkit-transition: background-color 0.2s linear;
+  transition: background-color 0.2s linear;
+}
+
+/* line 397, ../scss/global.scss */
+textarea,
+select,
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"] {
+  -webkit-appearance: none;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding;
+  background-clip: padding-box;
+  background-color: white;
+  border: 1px solid;
+  border-color: #999999;
+  color: #444444;
+  outline: 0;
+  padding: 2px 12px 2px 2px;
+  font-size: 13px;
+  height: 1.8em;
+  *padding-top: 2px;
+  /* IE7 */
+  *padding-bottom: 1px;
+  /* IE7 */
+  *height: auto;
+  /* IE7 */
+}
+
+/* line 420, ../scss/global.scss */
+#edit-keys {
+  width: 40%;
+}
+
+/* line 430, ../scss/global.scss */
+button:focus,
+button:active,
+input:focus,
+input:active,
+select:focus,
+select:active,
+textarea:focus,
+textarea:active {
+  -moz-box-shadow: #999999 0 0 7px;
+  -webkit-box-shadow: #999999 0 0 7px;
+  box-shadow: #999999 0 0 7px;
+  z-index: 1;
+  /* For Opera */
+}
+
+/* line 441, ../scss/global.scss */
+input[type="file"]:focus,
+input[type="file"]:active,
+input[type="radio"]:focus,
+input[type="radio"]:active,
+input[type="checkbox"]:focus,
+input[type="checkbox"]:active {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* line 446, ../scss/global.scss */
+.form-item, .form-actions {
+  margin-top: 0;
+}
+
+/* ------------- Table	------------- */
+/* line 450, ../scss/global.scss */
+table {
+  border: 1px solid #cccccc;
+  width: 100%;
+  margin-top: 5px;
+}
+
+/* line 455, ../scss/global.scss */
+thead th, th {
+  background: #dddddd;
+  border-bottom: 1px solid #cccccc;
+  color: #444444;
+}
+
+/* line 460, ../scss/global.scss */
+td, th {
+  padding: 4px;
+  vertical-align: middle;
+}
+
+/* line 464, ../scss/global.scss */
+th a, th a:link, th a:visited {
+  text-decoration: none;
+  border: 0;
+  display: block;
+}
+
+/* line 469, ../scss/global.scss */
+th a img {
+  margin: 0 0 3px 5px;
+}
+
+/* line 472, ../scss/global.scss */
+th.active a {
+  font-style: italic;
+}
+
+/* line 475, ../scss/global.scss */
+tr.even td, tr.even td.active {
+  background: #f7f7f7;
+}
+
+/* line 478, ../scss/global.scss */
+tr.odd td, tr.odd td.active {
+  background: white;
+}
+
+/* line 485, ../scss/global.scss */
+tr:hover td,
+tr.even:hover td.active,
+tr.odd:hover td.active {
+  background: #eee;
+}
+
+/* line 488, ../scss/global.scss */
+td ul.links {
+  margin-bottom: 0;
+}
