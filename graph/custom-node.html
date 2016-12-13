@@ -38,9 +38,9 @@ $.when(A,B).done(function(aResult, bResult){//when all request are successful
   l = data.nodes.length;
  
   for (i = 0; i < l; i++) {
-    data.nodes[i].x = Math.random() * 10; // 100 * Math.cos(2 * i * Math.PI / l);
-    data.nodes[i].y = Math.random() * 10; // 100 * Math.sin(2 * i * Math.PI / l);
-    data.nodes[i].size =  data.nodes[i].rids+3;
+    data.nodes[i].x = Math.random() * 2; // 100 * Math.cos(2 * i * Math.PI / l);
+    data.nodes[i].y = Math.random() * 2; // 100 * Math.sin(2 * i * Math.PI / l);
+    data.nodes[i].size =  3 * (data.nodes[i].rids + 3);
     data.nodes[i].color = colors[data.nodes[i].rating-1];
   }
 
@@ -61,7 +61,7 @@ $.when(A,B).done(function(aResult, bResult){//when all request are successful
       defaultLabelColor: '#37474F',
       defaultNodeColor: '#607D8B',
       defaultNodeBorderColor: '#37474F',
-      defaultLabelSize: 12,
+      defaultLabelSize: 10,
       labelHoverShadowColor: '#263238',
       nodeHoverColor: 'default',
       defaultNodeHoverColor: '#263238',
@@ -73,7 +73,9 @@ $.when(A,B).done(function(aResult, bResult){//when all request are successful
       enableEdgeHovering: true,
       drawEdgeLabels: true,
       edgeHoverExtremities: true,
-      edgeLabelSize: 'proportional',
+      edgeLabelSize: 'fixed',
+      edgeLabelSizePowRatio: 1,
+      edgeLabelThreshold: 6,
       doubleClickEnabled: false,
       minEdgeSize: 0.5,
       maxEdgeSize: 4,
