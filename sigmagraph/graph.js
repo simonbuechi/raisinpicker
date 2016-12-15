@@ -81,11 +81,11 @@
          // maxDegree = Math.max(maxDegree, graph.degree(n.id));
        // })
         _.$('min-degree').max = maxDegree;
-        _.$('max-degree-value').textContent = maxDegree;
+      //  _.$('max-degree-value').textContent = maxDegree;
         _.$('reset-btn').addEventListener("click", function(e) {
           _.$('min-degree').value = 0;
           _.$('min-degree-val').textContent = '0';
-          _.$('node-category').value = 0;
+          _.$('node-rating').value = 0;
           _.$('min-rating-val').textContent = '0';
           filter.undo().apply();
           _.$('dump').textContent = '';
@@ -97,9 +97,9 @@
         data = Object.assign({}, aResult[0], bResult[0]);
 
         for (i = 0; i < data.nodes.length; i++) {
-          data.nodes[i].x = Math.random() * 10; // 100 * Math.cos(2 * i * Math.PI / l);
-          data.nodes[i].y = Math.random() * 10; // 100 * Math.sin(2 * i * Math.PI / l);
-          data.nodes[i].size =  3 * (data.nodes[i].rids + 10);
+          data.nodes[i].x = Math.random(); // 100 * Math.cos(2 * i * Math.PI / l);
+          data.nodes[i].y = Math.random(); // 100 * Math.sin(2 * i * Math.PI / l);
+          data.nodes[i].size =  Math.min(2 * (data.nodes[i].rids + 15),40);
           data.nodes[i].color = colors[data.nodes[i].rating-1];
           data.nodes[i].icon = {
             font: 'Material Icons',
@@ -110,8 +110,8 @@
         }
 
         for (i = 0; i < data.edges.length; i++) {
-          data.edges[i].size =  Math.min(data.edges[i].rating / 2,1);
-          data.edges[i].color = '#90A4AE';
+          data.edges[i].size =  Math.max(data.edges[i].rating / 2,1);
+          data.edges[i].color = 'rgba(38, 50, 56, 0.3)';
           data.edges[i].hover_color = '#263238';
         }
 
@@ -122,7 +122,7 @@
             type: 'canvas' // sigma.renderers.canvas works as well
           }],
           settings: {
-            defaultEdgeColor: '#607D8B',
+            defaultEdgeColor: 'rgba(38, 50, 56, 0.3)',
             defaultLabelColor: '#37474F',
             defaultNodeColor: '#607D8B',
             defaultNodeBorderColor: '#37474F',
@@ -148,7 +148,6 @@
             minEdgeSize: 0.5,
             maxEdgeSize: 4,
             edgeHoverColor: 'edge',
-            edgeHoverExtremities: true,
             animationsTime: 2500
           }
         });
@@ -156,12 +155,12 @@
         var fa = sigma.layouts.startForceAtlas2(s,{
             worker: true, 
             barnesHutOptimize: true,
-            startingIterations: 4,
+            startingIterations: 1,
             iterationsPerRender: 1,
             slowDown: 1,
-            gravity: 3,
+            gravity: 100,
             autoStop: true,
-            maxIterations: 50,
+            maxIterations: 500,
             background: true,
             easing: 'cubicInOut'
         });
@@ -195,23 +194,25 @@
             .apply();
         }
 
-        function applyCategoryFilter(e) {
+        function applyRatingFilter(e) {
           var c = e.target.value;
           _.$('min-rating-val').textContent = c;
           filter
-            .undo('node-category')
+            .undo('node-rating')
             .nodesBy(function(n) {
               return n.size >= c;
-            }, 'node-category')
+            }, 'node-rating')
             .apply();
         }
 
         _.$('min-degree').addEventListener("input", applyMinDegreeFilter);  
-        _.$('node-category').addEventListener("input", applyCategoryFilter);
+        _.$('node-rating').addEventListener("input", applyRatingFilter);
+
+        /*
         s.bind('clickNode', function(e) {
           window.location = "/node/" + e.data.node.id;
         });
-
+        */
       });
     
   
