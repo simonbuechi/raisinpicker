@@ -1,85 +1,91 @@
 (function($){
   "use strict";
 
-      var s, i, filter, data,
-          colors = [ '#E91E63',
-                     '#FF5722',
-                     '#FF9800',
-                     '#9E9D24',
-                     '#689F38',
-                     '#009688',
-                     '#0097A7',
-                     '#0288D1',
-                     '#3F51B5'],
-          icons = { knowledge: "lightbulb_outline",
-                    publication: "book",
-                    person: "person",
-                    event: "event",
-                    collection: "view_headline" };
-      var A = $.getJSON('/api/graph-nodes');
-      var B = $.getJSON('/api/graph-edges');
+  var s, i, filter, data,
+      colors = [ '#F06292',
+                 '#E91E63',
+                 '#880E4F',
+                 '#C0CA33',
+                 '#9E9D24',
+                 '#827717',
+                 '#26A69A',
+                 '#00796B',
+                 '#004D40'],
+      icons = { knowledge: "lightbulb_outline",
+                publication: "book",
+                person: "person",
+                event: "event",
+                collection: "view_headline" };
+  var A = $.getJSON('/api/graph-nodes');
+  var B = $.getJSON('/api/graph-edges');
+  var _ = {
+    $: function (id) {
+      return document.getElementById(id);
+    },
 
-      var _ = {
-        $: function (id) {
-          return document.getElementById(id);
-        },
+    all: function (selectors) {
+      return document.querySelectorAll(selectors);
+    },
 
-        all: function (selectors) {
-          return document.querySelectorAll(selectors);
-        },
+    removeClass: function(selectors, cssClass) {
+      var nodes = document.querySelectorAll(selectors);
+      var l = nodes.length;
+      for ( i = 0 ; i < l; i++ ) {
+        var el = nodes[i];
+        // Bootstrap compatibility
+        el.className = el.className.replace(cssClass, '');
+      }
+    },
 
-        removeClass: function(selectors, cssClass) {
-          var nodes = document.querySelectorAll(selectors);
-          var l = nodes.length;
-          for ( i = 0 ; i < l; i++ ) {
-            var el = nodes[i];
-            // Bootstrap compatibility
-            el.className = el.className.replace(cssClass, '');
-          }
-        },
-
-        addClass: function (selectors, cssClass) {
-          var nodes = document.querySelectorAll(selectors);
-          var l = nodes.length;
-          for ( i = 0 ; i < l; i++ ) {
-            var el = nodes[i];
-            // Bootstrap compatibility
-            if (-1 == el.className.indexOf(cssClass)) {
-              el.className += ' ' + cssClass;
-            }
-          }
-        },
-
-        show: function (selectors) {
-          this.removeClass(selectors, 'hidden');
-        },
-
-        hide: function (selectors) {
-          this.addClass(selectors, 'hidden');
-        },
-
-        toggle: function (selectors, cssClass) {
-          var cssClass = cssClass || "hidden";
-          var nodes = document.querySelectorAll(selectors);
-          var l = nodes.length;
-          for ( i = 0 ; i < l; i++ ) {
-            var el = nodes[i];
-            //el.style.display = (el.style.display != 'none' ? 'none' : '' );
-            // Bootstrap compatibility
-            if (-1 !== el.className.indexOf(cssClass)) {
-              el.className = el.className.replace(cssClass, '');
-            } else {
-              el.className += ' ' + cssClass;
-            }
-          }
+    addClass: function (selectors, cssClass) {
+      var nodes = document.querySelectorAll(selectors);
+      var l = nodes.length;
+      for ( i = 0 ; i < l; i++ ) {
+        var el = nodes[i];
+        // Bootstrap compatibility
+        if (-1 == el.className.indexOf(cssClass)) {
+          el.className += ' ' + cssClass;
         }
-      };
+      }
+    },
 
-      function updatePane (graph, filter) {
+    show: function (selectors) {
+      this.removeClass(selectors, 'hidden');
+    },
+
+    hide: function (selectors) {
+      this.addClass(selectors, 'hidden');
+    },
+
+    toggle: function (selectors, cssClass) {
+      var cssClass = cssClass || "hidden";
+      var nodes = document.querySelectorAll(selectors);
+      var l = nodes.length;
+      for ( i = 0 ; i < l; i++ ) {
+        var el = nodes[i];
+        //el.style.display = (el.style.display != 'none' ? 'none' : '' );
+        // Bootstrap compatibility
+        if (-1 !== el.className.indexOf(cssClass)) {
+          el.className = el.className.replace(cssClass, '');
+        } else {
+          el.className += ' ' + cssClass;
+        }
+      }
+    }
+  };
+
+function updatePane (graph, filter) {
         var maxDegree = 20;
+        /*
+        var options = '';
+        graph.nodes().forEach(function(n) {
+          options += '<option value="'+n.label+'" />';
+          document.getElementById('datalist').innerHTML = options;
+        });
+        */
         // graph.nodes().forEach(function(n) {
-         // maxDegree = Math.max(maxDegree, graph.degree(n.id));
-       // })
+        // maxDegree = Math.max(maxDegree, graph.degree(n.id));
+        // })
         _.$('min-degree').max = maxDegree;
       //  _.$('max-degree-value').textContent = maxDegree;
         _.$('reset-btn').addEventListener("click", function(e) {
@@ -87,33 +93,35 @@
           _.$('min-degree-val').textContent = '0';
           _.$('node-rating').value = 0;
           _.$('min-rating-val').textContent = '0';
+
+
           filter.undo().apply();
           _.$('dump').textContent = '';
           _.hide('#dump');
         });
       }
 
-      $.when(A,B).done(function(aResult, bResult){//when all request are successful
-        data = Object.assign({}, aResult[0], bResult[0]);
+  $.when(A,B).done(function(aResult, bResult){//when all request are successful
+    data = Object.assign({}, aResult[0], bResult[0]);
 
-        for (i = 0; i < data.nodes.length; i++) {
-          data.nodes[i].x = Math.random(); // 100 * Math.cos(2 * i * Math.PI / l);
-          data.nodes[i].y = Math.random(); // 100 * Math.sin(2 * i * Math.PI / l);
-          data.nodes[i].size =  Math.min(2 * (data.nodes[i].rids + 15),40);
-          data.nodes[i].color = colors[data.nodes[i].rating-1];
-          data.nodes[i].icon = {
-            font: 'Material Icons',
-            scale: 1.0, 
-            color: '#fff',
-            content: icons[data.nodes[i].ctype]
-          };
-        }
+    for (i = 0; i < data.nodes.length; i++) {
+      data.nodes[i].x = Math.random(); // 100 * Math.cos(2 * i * Math.PI / l);
+      data.nodes[i].y = Math.random(); // 100 * Math.sin(2 * i * Math.PI / l);
+      data.nodes[i].size =  Math.min(3 * (data.nodes[i].rids + 0.5),50);
+      data.nodes[i].color = colors[data.nodes[i].rating-1];
+      data.nodes[i].icon = {
+        font: 'Material Icons',
+        scale: 1.0, 
+        color: '#fff',
+        content: icons[data.nodes[i].ctype]
+      };
+    }
 
-        for (i = 0; i < data.edges.length; i++) {
-          data.edges[i].size =  Math.max(data.edges[i].rating / 2,1);
-          data.edges[i].color = 'rgba(38, 50, 56, 0.3)';
-          data.edges[i].hover_color = '#263238';
-        }
+    for (i = 0; i < data.edges.length; i++) {
+      data.edges[i].size =  Math.max(data.edges[i].rating,1);
+      data.edges[i].color = 'rgba(38, 50, 56, 0.2)';
+      data.edges[i].hover_color = 'rgba(38, 50, 56, 1)';
+    }
 
         s = new sigma({
           graph: data,
@@ -122,7 +130,7 @@
             type: 'canvas' // sigma.renderers.canvas works as well
           }],
           settings: {
-            defaultEdgeColor: 'rgba(38, 50, 56, 0.3)',
+            defaultEdgeColor: '#rgba(38, 50, 56, 0.2)',
             defaultLabelColor: '#37474F',
             defaultNodeColor: '#607D8B',
             defaultNodeBorderColor: '#37474F',
@@ -135,7 +143,7 @@
         //    nodeBorderSize: 2,
         //    nodeHoverBorderSize: 2,
         //    nodeActiveBorderSize: 2,
-            defaultLabelSize: 12,
+            defaultLabelSize: 10,
             edgeHoverSizeRatio: 1,
             enableHovering: true,
             enableEdgeHovering: true,
@@ -157,12 +165,12 @@
             barnesHutOptimize: true,
             startingIterations: 1,
             iterationsPerRender: 1,
-            slowDown: 1,
-            gravity: 100,
+            slowDown: 5,
+            gravity: 25,
             autoStop: true,
-            maxIterations: 500,
-            background: true,
-            easing: 'cubicInOut'
+            maxIterations: 100
+          //  background: false,
+           // easing: 'cubicInOut'
         });
 
         fa.bind('start stop interpolate', function(e) {
@@ -193,28 +201,19 @@
             }, 'min-degree')
             .apply();
         }
-
         function applyRatingFilter(e) {
           var c = e.target.value;
           _.$('min-rating-val').textContent = c;
           filter
             .undo('node-rating')
             .nodesBy(function(n) {
-              return n.size >= c;
+              return n.rating >= c;
             }, 'node-rating')
             .apply();
         }
+  _.$('min-degree').addEventListener("input", applyMinDegreeFilter);  
+  _.$('node-rating').addEventListener("input", applyRatingFilter);
 
-        _.$('min-degree').addEventListener("input", applyMinDegreeFilter);  
-        _.$('node-rating').addEventListener("input", applyRatingFilter);
-
-        /*
-        s.bind('clickNode', function(e) {
-          window.location = "/node/" + e.data.node.id;
-        });
-        */
-      });
+});
     
-  
-
 })(jQuery);
