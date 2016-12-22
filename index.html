@@ -105,8 +105,8 @@
             <div class="col s12 m4 l4" style="display:none;">
                 <div class="card">
                     <div class="card-content">
-                        <span class="card-title activator grey-text text-darken-4">Search <i class="mdi-navigation-more-vert right"></i></span>
-                        <p>Search, Connecting, Feed, Notifaciotn</p>
+                        <span class="card-title activator grey-text text-darken-4">XXX <i class="mdi-navigation-more-vert right"></i></span>
+                        <p>XXX</p>
                     </div>
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4">Search (details) <i class="mdi-navigation-close right"></i></span>
@@ -134,7 +134,7 @@
                 <div class="card">
                     <div class="card-content">
                         <span class="card-title grey-text text-darken-4">Search</span>
-                        <p>Full-text search. Filter by date, rating, tags, and type (faceted search).</p>
+                        <p>Full-text search. Filter by date, rating, tags, and type (faceted search). Using Apache Solr for indexing.</p>
                     </div>
                 </div>
             </div>
@@ -159,7 +159,7 @@
             <div class="col s12 m4 l4">
                 <div class="card">
                     <div class="card-content">
-                        <span class="card-title grey-text text-darken-4">Statistics</span>
+                        <span class="card-title grey-text text-darken-4">Statistics & Charts</span>
                         <p>Monitor created/updated content nodes. Count node views. Visualize in charts using Google Charts or Highcharts library.</p>
                     </div>
                 </div>
@@ -181,7 +181,15 @@
                         <p>Every edit and change is logged and can be undone. See your editing history. Count the number of views of a piece of content.</p>
                     </div>
                 </div>
-            </div>    
+            </div>  
+            <div class="col s12 m4 l4">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title grey-text text-darken-4">Relations</span>
+                        <p>Connect nodes with each other. “Fieldable” relations.</p>
+                    </div>
+                </div>
+            </div>   
         </div>
     </div>
 </div>
@@ -197,31 +205,21 @@
         <h2 class="header text_b">Get Started</h2>
         <div class="row">
             <div class="col m4 s12">
-                <div class="card">
-                    <div class="card-content">
-                        <p><button class="btn-large waves-effect waves-light" disabled href="https://github.com/simonbuechi/raisinpicker">Download (inactive)</button></p>
-                        <p><button class="btn-large waves-effect waves-light" disabled href="">View Demo (inactive)</button></p>
-                        <p><button class="btn-large waves-effect waves-light" href="#contact">Request a Demo</button></p>
-                    </div>
-                </div>
+                <h5>Download</h5>
+                <p>Raisin Picker is a Drupal installation profile. It is not yet available.</p>
+                <p><button class="btn-large waves-effect waves-light" disabled href="https://github.com/simonbuechi/raisinpicker">Download (inactive)</button></p>
+                <p><button class="btn-large waves-effect waves-light" disabled href="">View Demo (inactive)</button></p>
+            
             </div>
             <div class="col m4 s12">
-                <div class="card">
-                    <div class="card-content">
-                        <span class="card-title">Requirements</span>
-                        safasfdasdf 
-                    </div>
-                </div>
+                <h5>Request a demo</h5>
+                <p>Please fill out the contact form.</p>
             </div>
             <div class="col m4 s12">
-                <div class="card">
-                    <div class="card-content">
-                        
-                        <p><span class="card-title">Requirements</span>
-                         Drupal (required): <a href="https://www.drupal.org/docs/7/system-requirements/overview">Drupal</a></p>
-                        <p>Apache Solr (required for advanced/fast search only): <a href="https://lucene.apache.org/solr/6_3_0/SYSTEM_REQUIREMENTS.html">see here</a></p>
-                    </div>
-                </div>
+                <h5>Requirements</h5>     
+                <p>
+                 Drupal (required): <a href="https://www.drupal.org/docs/7/system-requirements/overview">Drupal</a></p>
+                <p>Apache Solr (required for advanced/fast search only): <a href="https://lucene.apache.org/solr/6_3_0/SYSTEM_REQUIREMENTS.html">see here</a></p>
             </div>            
         </div>
     </div>
@@ -240,7 +238,7 @@
             <div class="col m8 s12">
                 <div class="card">
                 <div class="card-content">
-                <form action="contact.php" method="post">
+                <form action="https://formspree.io/simon.buechi@gmail.com" method="POST">
                     <div class="row">
                         <div class="input-field col s6">
                             <i class="mdi-action-account-circle prefix"></i>
@@ -257,6 +255,7 @@
                             <textarea id="icon_prefix2" name="message" class="materialize-textarea"></textarea>
                             <label for="icon_prefix2">Message</label>
                         </div>
+                        <input type="text" name="_gotcha" style="display:none" />
                         <div class="col s5">
                             <button class="btn waves-effect waves-light darken-1" type="submit">Submit
                             </button>
