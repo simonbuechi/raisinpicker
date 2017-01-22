@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Raisin Picker Pages feature.
+ */
+
+include_once 'raisinpicker_pages.features.inc';

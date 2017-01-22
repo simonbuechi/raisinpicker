@@ -1,0 +1,7 @@
+name = Raisin Picker Rule Word Count
+description = Rule Action to count words/characters in node and store in field
+core = 7.x
+package = Raisin Picker
+version = 7.x-0.2
+project = rp_rule_wordcount
+dependencies[] = rules

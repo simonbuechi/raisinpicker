@@ -1,0 +1,63 @@
+<?php
+ 
+/**
+ * Implement hook_rules_action_info().
+ */
+function rp_rule_relevance_rules_action_info() {
+  return array(
+    'rp_rule_relevance_rules_action_count' => array(
+      'label' => t('Set relevance'),
+      'group' => t('Custom'),
+      'parameter' => array(
+        'node' => array(
+          'type' => 'node',
+          'label' => t('Node'),
+        ),
+        'rating' => array(
+          'type' => 'decimal',
+          'label' => t('rating'),
+        ),
+        'tags' => array(
+          'type' => 'decimal',
+          'label' => t('tags'),
+        ),
+        'relations' => array(
+          'type' => 'decimal',
+          'label' => t('relations'),
+        ),
+        'words' => array(
+          'type' => 'decimal',
+          'label' => t('words'),
+        ),
+        'revisions' => array(
+          'type' => 'decimal',
+          'label' => t('revisions'),
+        ),
+        'lastview' => array(
+          'type' => 'date',
+          'label' => t('lastview'),
+        ),
+      ),
+    ),
+  );
+}
+
+function rp_rule_relevance_rules_action_count($node, $rating, $tags, $relations, $words, $revisions, $lastview) {
+
+  $score =  exp(min($rating, 1.5)) *
+            exp(min($tags, 1.5)) *
+            exp(min($relations, 1.5)) *
+            exp(min($words, 1.5)) *
+            exp(min($revisions, 1.5));
+  $index = $score * log((time() - $lastview) / (60 * 60 * 24));
+
+  $node->field_relevance_score['und'][0]['value'] = $score;
+  $node->field_relevance_index['und'][0]['value'] = $index;
+
+  field_attach_presave('node', $node);
+  field_attach_update('node', $node);
+}
+
+
+
+
