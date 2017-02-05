@@ -9,6 +9,16 @@ Status
 ------
 Raisin Picker is in alpha status. Currently, most code is scattered in contributed modules, themes and patches. I try to create a Drupal distribution to make it easy to install it in one step.
 
+Version
+------
+
+| Version | Description |
+| --- | --- |
+| V0.7 | 1 June 2016. Performance Fixing. Add Caching (Redis) |
+| V0.71 | 20 June 2016. New design/theme (bootstrap material). Search api reconfigured and enhanced |
+| V0.72 | 1 December 2016. Add charts. Add Pushover notifications. Add notifications to IFTTT |
+| V0.73 (current) | 15 Jan 2017. Add Relevance Index. Add Graph (Sigma.js) |
+| V0.74 | ... |
 
 Demo accounts (currently offline)
 -------------
@@ -16,10 +26,6 @@ Since only parts of Raisin Picker is available as source code, I created a demo 
 Go to [buechi.name/raisinpickerdemo](http://buechi.name/raisinpickerdemo/ "Raisin Picker Demo")  
 
 1. User name "John Doe", password "johndoe56"  
-2. User name "Max Muster", password "maxmuster 56"
+2. User name "Max Muster", password "maxmuster56"
 
 
-
-Sources & References
--------
-Icons: http://www.iconfinder.com/icondetails/106138/128/circle_full_icon  
