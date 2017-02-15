@@ -95,10 +95,12 @@ function rp_rule_relevance_rules_action_set($node, $score, $index) {
 
 /* Set field values without update node, therefore update date on node is not affected */
 
-  $node->field_relevance_score['und'][0]['value'] = $score;
-  $node->field_relevance_index['und'][0]['value'] = $index;
-  field_attach_presave('node', $node);
-  field_attach_update('node', $node);
+  if (round($node->field_relevance_index['und'][0]['value'] - $index) !=  0) {
+    $node->field_relevance_score['und'][0]['value'] = $score;
+    $node->field_relevance_index['und'][0]['value'] = $index;
+    field_attach_presave('node', $node);
+    field_attach_update('node', $node);
+  }
 }
 
 
@@ -139,4 +141,29 @@ function rp_rule_relevance_rules_action_calc($lastview, $rating = 1, $tags = 1, 
   );
 }
 
+function rp_rule_relevance_rules_action_calcnode($node, $user) {
 
+  $rating = $node->field_rating['und'][0]['value'];
+  $tags = 1;
+  $relations = relation_query('node', $node->nid)->count()->execute();        
+  $revisions = 1;
+  $words = $node->field_word_count['und'][0]['value'];
+  $views = 1;
+
+  $tags_avg = $user->field_stat_tags_avg['und'][0]['value'];
+  $views_avg = $user->field_stat_views_avg['und'][0]['value'];
+  $relations_avg = $user->field_stat_relations_avg['und'][0]['value'];
+  $revisions_avg = $user->field_stat_revisions_avg['und'][0]['value'];
+  $words_avg = $user->field_stat_words_avg['und'][0]['value'];
+
+  $lastview = $node->last_view['und'][0]['value'];
+  $treshold = 2.2;
+
+  $score =  $rating * (min($tags / $tags_avg, $treshold) + min($relations / $relations_avg, $treshold) + min($words / $words_avg, $treshold) + min($revisions / $revisions_avg, $treshold) + min($views / $views_avg, $treshold));
+  $index = $score * log((time() - $lastview) / (60 * 60 * 24));
+
+  return array(
+    'score' => $score,
+    'index' => $index,
+  );
+}
