@@ -1,0 +1,9 @@
+name: RP Content Types
+type: module
+description: Provides content types, fields, taxonomies.
+version: 0.1
+core: 8.x
+package: Raisin Picker
+dependencies:
+  - field
+  - taxonomy

@@ -1,0 +1,7 @@
+uuid: 9faad6a9-ad16-4c43-88c9-9a423afb2e98
+langcode: en
+status: true
+dependencies: {  }
+id: table
+label: Table
+behavior_plugins: {  }

@@ -1,0 +1,21 @@
+uuid: 15bd6ab3-2863-4a43-9e84-13a9aaba9ec0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_descrip
+    - paragraphs.paragraphs_type.opinion
+  module:
+    - text
+id: paragraph.opinion.field_descrip
+field_name: field_descrip
+entity_type: paragraph
+bundle: opinion
+label: 'Opinion Text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
