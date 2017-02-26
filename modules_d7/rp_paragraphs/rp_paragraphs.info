@@ -1,0 +1,6 @@
+name = Raisin Picker Paragraphs
+description = Raisin Picker formatter for paragraphs fields
+core = 7.x
+package = Raisin Picker
+
+dependencies[] = paragraphs

@@ -1,0 +1,169 @@
+<?php
+
+
+/**
+ * Implement hook_rules_action_info().
+ */
+function rp_rule_relevance_rules_action_info() {
+  return array(
+    'rp_rule_relevance_rules_action_calc' => array(
+      'label' => t('Calculate relevance'),
+      'group' => t('Raisin Picker'),
+      'parameter' => array(
+        'lastview' => array(
+          'type' => 'date',
+          'label' => t('lastview'),
+        ),
+        'rating' => array(
+          'type' => 'integer',
+          'label' => t('rating'),
+        ),
+        'tags' => array(
+          'type' => 'integer',
+          'label' => t('tags'),
+        ),
+        'relations' => array(
+          'type' => 'integer',
+          'label' => t('relations'),
+        ),
+        'words' => array(
+          'type' => 'integer',
+          'label' => t('words'),
+        ),
+        'revisions' => array(
+          'type' => 'integer',
+          'label' => t('revisions'),
+        ),
+        'views' => array(
+          'type' => 'integer',
+          'label' => t('views'),
+        ),
+        'tags_avg' => array(
+          'type' => 'decimal',
+          'label' => t('tags_avg'),
+        ),
+        'relations_avg' => array(
+          'type' => 'decimal',
+          'label' => t('relations_avg'),
+        ),
+        'words_avg' => array(
+          'type' => 'decimal',
+          'label' => t('words_avg'),
+        ),
+        'revisions_avg' => array(
+          'type' => 'decimal',
+          'label' => t('revisions_avg'),
+        ),
+        'views_avg' => array(
+          'type' => 'decimal',
+          'label' => t('views_avg'),
+        ),
+      ),
+      'provides' => array(
+        'score' => array(
+          'type' => 'decimal',
+          'label' => t('Relevance Score'),
+        ),
+        'index' => array(
+          'type' => 'decimal',
+          'label' => t('Relevance Index'),
+        ),        
+      ),      
+    ),
+    'rp_rule_relevance_rules_action_set' => array(
+      'label' => t('Set relevance'),
+      'group' => t('Raisin Picker'),
+      'parameter' => array(
+        'node' => array(
+          'type' => 'node',
+          'label' => t('Node'),
+        ),
+        'score' => array(
+          'type' => 'decimal',
+          'label' => t('Score'),
+        ),
+        'index' => array(
+          'type' => 'decimal',
+          'label' => t('Index'),
+        ),
+      ),
+    ),    
+  );
+}
+
+function rp_rule_relevance_rules_action_set($node, $score, $index) {
+
+/* Set field values without update node, therefore update date on node is not affected */
+
+  if (round($node->field_relevance_index['und'][0]['value'] - $index) !=  0) {
+    $node->field_relevance_score['und'][0]['value'] = $score;
+    $node->field_relevance_index['und'][0]['value'] = $index;
+    field_attach_presave('node', $node);
+    field_attach_update('node', $node);
+  }
+}
+
+
+function rp_rule_relevance_rules_action_calc($lastview, $rating = 1, $tags = 1, $relations = 1, $words = 1, $revisions = 1, $views = 1, $tags_avg = 1, $relations_avg = 1, $words_avg = 1, $revisions_avg = 1, $views_avg = 1) {
+
+/*
+  $score =  exp(min($rating, 1.5)) *
+            exp(min($tags, 1.5)) *
+            exp(min($relations, 1.5)) *
+            exp(min($words, 1.5)) *
+            exp(min($revisions, 1.5));
+  watchdog('rp_rule_relevance', 'vars $rating, $tags, $relations, $words, $revisions, $views, $tags_avg, $relations_avg, $words_avg', array('$rating' => $rating, '$tags' => $tags, '$relations' => $relations, '$words' => $words, '$revisions' => $revisions, '$views' => $views, '$tags_avg' => $tags_avg, '$relations_avg' => $relations_avg, '$words_avg' => $words_avg), WATCHDOG_NOTICE, $link = NULL);            
+*/
+  if ($lastview == 0) {
+        $lastview = time();
+    }
+
+  settype($rating, "float");            
+  settype($tags, "float");
+  settype($tags_avg, "float");
+  settype($relations, "float");
+  settype($relations_avg, "float");
+  settype($words, "float");
+  settype($words_avg, "float");
+  settype($revisions, "float");  
+  settype($revisions_avg, "float");
+  settype($views, "float");
+  settype($views_avg, "float");
+  settype($lastview, "float");
+
+  $treshold = 2.2;
+  $score =  $rating * (min($tags / $tags_avg, $treshold) + min($relations / $relations_avg, $treshold) + min($words / $words_avg, $treshold) + min($revisions / $revisions_avg, $treshold) + min($views / $views_avg, $treshold));
+  $index = $score * log((time() - $lastview) / (60 * 60 * 24));
+
+  return array(
+    'score' => $score,
+    'index' => $index,
+  );
+}
+
+function rp_rule_relevance_rules_action_calcnode($node, $user) {
+
+  $rating = $node->field_rating['und'][0]['value'];
+  $tags = 1;
+  $relations = relation_query('node', $node->nid)->count()->execute();        
+  $revisions = 1;
+  $words = $node->field_word_count['und'][0]['value'];
+  $views = 1;
+
+  $tags_avg = $user->field_stat_tags_avg['und'][0]['value'];
+  $views_avg = $user->field_stat_views_avg['und'][0]['value'];
+  $relations_avg = $user->field_stat_relations_avg['und'][0]['value'];
+  $revisions_avg = $user->field_stat_revisions_avg['und'][0]['value'];
+  $words_avg = $user->field_stat_words_avg['und'][0]['value'];
+
+  $lastview = $node->last_view['und'][0]['value'];
+  $treshold = 2.2;
+
+  $score =  $rating * (min($tags / $tags_avg, $treshold) + min($relations / $relations_avg, $treshold) + min($words / $words_avg, $treshold) + min($revisions / $revisions_avg, $treshold) + min($views / $views_avg, $treshold));
+  $index = $score * log((time() - $lastview) / (60 * 60 * 24));
+
+  return array(
+    'score' => $score,
+    'index' => $index,
+  );
+}

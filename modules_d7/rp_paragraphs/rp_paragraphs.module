@@ -1,0 +1,112 @@
+<?php
+
+/**
+ * Implements hook_field_formatter_info().
+ */
+function rp_paragraphs_field_formatter_info() {
+  return array(
+    'rp_paragraphs' => array(
+      'label' => t('Paragraphs items short'),
+      'field types' => array('paragraphs'),
+      'settings' =>  array(
+        'view_mode' => 'full',
+        'limit' => 1,
+      ),
+    ),    
+  );
+}
+
+/**
+ * Implements hook_field_formatter_settings_form().
+ */
+function rp_paragraphs_field_formatter_settings_form($field, $instance, $view_mode, $form, &$form_state) {
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+  $elements = array();
+  if ($display['type'] == 'rp_paragraphs') {
+    // View mode
+    $entity_type = entity_get_info('paragraphs_item');
+    $options = array();
+    foreach ($entity_type['view modes'] as $mode => $info) {
+      $options[$mode] = $info['label'];
+    }
+    $elements['view_mode'] = array(
+      '#type' => 'select',
+      '#title' => t('View mode'),
+      '#options' => $options,
+      '#default_value' => $settings['view_mode'],
+      '#description' => t('Select the view mode'),
+    );
+    // Limit
+    $elements['limit'] = array(
+      '#type' => 'textfield',
+      '#title' => t("Limit"),
+      '#size' => 2,
+      '#element_validate' => array('element_validate_integer'),
+      '#default_value' => $settings['limit'],
+      '#description' => t('Limit the number of paragraphs items to be returned. 0 to set no limit.'),
+    );
+  }
+  return $elements;
+}
+
+/**
+ * Implements hook_field_formatter_settings_summary().
+ */
+function rp_paragraphs_field_formatter_settings_summary($field, $instance, $view_mode) {
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+  $output = array();
+  if ($display['type'] == 'rp_paragraphs') {
+    // View mode
+    $entity_type = entity_get_info('paragraphs_item');
+    if (!empty($entity_type['view modes'][$settings['view_mode']]['label'])) {
+      $output[] =  t('View mode: @mode', array('@mode' => $entity_type['view modes'][$settings['view_mode']]['label']));
+    }
+    // Limit
+    $limit = (!empty($settings['limit'])) ? $settings['limit'] : t("Unlimited");
+    $output[] = t("Limit: @limit", array('@limit' => $limit));
+  }
+  return implode('<br>', $output);
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function rp_paragraphs_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $element = array();
+  $settings = $display['settings'];
+  switch ($display['type']) {
+    case 'rp_paragraphs':
+      // Prevent displaying useless markup if we don't have any values.
+      if (empty($items)) {
+        return $element;
+      }
+      // Get view mode from entity.
+      $display_view_mode = empty($display['settings']['view_mode']) ? 'full' : $display['settings']['view_mode'];
+      // Get view mode from field instance (if configured).
+      $view_mode = empty($instance['display'][$display_view_mode]['settings']['view_mode']) ? $display_view_mode : $instance['display'][$display_view_mode]['settings']['view_mode'];
+      $element['#theme_wrappers'] = array('paragraphs_items');
+      $element['#attributes']['class'][] = drupal_html_class('paragraphs-items');
+      $element['#attributes']['class'][] = drupal_html_class('paragraphs-items-view-mode-' . $view_mode);
+      $element['#attributes']['class'][] = drupal_html_class('paragraphs-items-field-' . $instance['field_name']);
+      $element['#view_mode'] = $view_mode;
+      // Limit
+      $limit = (!empty($display['settings']['limit'])) ? $display['settings']['limit'] : FALSE;
+      $count = 0;
+      foreach ($items as $delta => $item) {
+        if ($paragraph = paragraphs_field_get_entity($item)) {
+          if (entity_access('view', 'paragraphs_item', $paragraph)) {
+            $element[$delta]['entity'] = $paragraph->view($view_mode);
+            $count++;
+            // Handle limit
+            if ($limit && $count >= $limit) {
+              break;
+            }
+          }
+        }
+      }
+      break;
+  }
+  return $element;
+}

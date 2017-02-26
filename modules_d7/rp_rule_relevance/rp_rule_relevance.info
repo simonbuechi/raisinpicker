@@ -1,0 +1,7 @@
+name = Raisin Picker Relevance Score
+description = Rule Action to calc and set relevance score
+core = 7.x
+package = Raisin Picker
+version = 7.x-0.2
+project = rp_rule_relevance
+dependencies[] = rules

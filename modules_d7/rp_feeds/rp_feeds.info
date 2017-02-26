@@ -1,0 +1,7 @@
+name = Raisin Picker Feeds
+description = Feeds stuff
+core = 7.x
+package = Raisin Picker
+version = 7.x-0.2
+project = rp_feeds
+dependencies[] = feeds

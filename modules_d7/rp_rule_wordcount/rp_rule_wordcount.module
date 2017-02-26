@@ -1,0 +1,32 @@
+<?php
+ 
+/**
+ * Implement hook_rules_action_info().
+ */
+function rp_rule_wordcount_rules_action_info() {
+  return array(
+    'rp_rule_wordcount_rules_action_count' => array(
+      'label' => t('Word count'),
+      'group' => t('Custom'),
+      'parameter' => array(
+        'string' => array(
+          'type' => 'text',
+          'label' => t('Text'),
+          'description' => t('Select text field or enter text.'),
+        ),
+      ),
+      'provides' => array(
+        'wordcount' => array(
+          'type' => 'integer',
+          'label' => t('Count'),
+        ),
+      ),
+    ),
+  );
+}
+
+function rp_rule_wordcount_rules_action_count($string) {
+  return array(
+    'wordcount' => count(explode(" ", strip_tags(trim($string)))),
+  );
+}

@@ -1,0 +1,6 @@
+name = Raisin Picker Basics
+description = Basics
+core = 7.x
+package = Raisin Picker
+version = 7.x-0.2
+project = rp_rule_basics

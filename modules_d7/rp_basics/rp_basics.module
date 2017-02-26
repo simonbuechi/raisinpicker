@@ -1,0 +1,16 @@
+<?php
+
+
+/**
+ * Implement hook_admin_paths().
+Taxonomy terms add/edit in front theme, not admin theme
+ */
+function rp_basics_admin_paths() {
+  $paths = array(
+    'taxonomy/*/add' => FALSE,
+    'taxonomy/*/edit' => FALSE,
+//    'taxonomy/term/*/edit' => FALSE,
+  );
+  return $paths;
+}
+
