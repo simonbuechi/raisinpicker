@@ -1,0 +1,15 @@
+uuid: 2ac6ae8c-4ca6-44a6-bde3-bb457f340ef7
+langcode: en
+status: true
+dependencies: {  }
+id: reference
+label: references
+reverse_label: Reference
+directional: false
+transitive: false
+r_unique: false
+min_arity: 2
+max_arity: 2
+source_bundles:
+  'node:*': 'node:*'
+target_bundles: {  }

@@ -1,0 +1,25 @@
+uuid: 8b2f119b-aa40-4816-96be-6fe76ee33af0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_int_avg_words
+    - profile.type.settings
+id: profile.settings.field_int_avg_words
+field_name: field_int_avg_words
+entity_type: profile
+bundle: settings
+label: 'int avg words'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: !!float 100
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

@@ -1,0 +1,12 @@
+name: Raisin Picker User
+type: module
+description: Setup views.
+version: 8.x-0.1
+core: 8.x
+package: Raisin Picker
+dependencies:
+  - views
+  - views_infinite_scroll
+  - rp_structure
+  - rp_paragraphs
+  - rp_relations

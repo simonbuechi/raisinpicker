@@ -1,0 +1,77 @@
+uuid: c62bdb0c-fb4f-4942-851e-b8678916f31b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.relation.endpoints
+    - relation.type.creator
+  module:
+    - dynamic_entity_reference
+id: relation.creator.endpoints
+field_name: endpoints
+entity_type: relation
+bundle: creator
+label: Endpoints
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  node:
+    handler: 'default:node'
+    handler_settings:
+      target_bundles: null
+  block_content:
+    handler: 'default:block_content'
+    handler_settings:
+      target_bundles: {  }
+  feeds_feed:
+    handler: 'default:feeds_feed'
+    handler_settings:
+      target_bundles: {  }
+  feeds_subscription:
+    handler: 'default:feeds_subscription'
+    handler_settings:
+      target_bundles: {  }
+  file:
+    handler: 'default:file'
+    handler_settings:
+      target_bundles: {  }
+  flagging:
+    handler: 'default:flagging'
+    handler_settings:
+      target_bundles: {  }
+  paragraph:
+    handler: 'default:paragraph'
+    handler_settings:
+      target_bundles: {  }
+  profile:
+    handler: 'default:profile'
+    handler_settings:
+      target_bundles: {  }
+  redirect:
+    handler: 'default:redirect'
+    handler_settings:
+      target_bundles: {  }
+  relation:
+    handler: 'default:relation'
+    handler_settings:
+      target_bundles: {  }
+  shortcut:
+    handler: 'default:shortcut'
+    handler_settings:
+      target_bundles: {  }
+  taxonomy_term:
+    handler: 'default:taxonomy_term'
+    handler_settings:
+      target_bundles: {  }
+  user:
+    handler: 'default:user'
+    handler_settings:
+      target_bundles: {  }
+  menu_link_content:
+    handler: 'default:menu_link_content'
+    handler_settings:
+      target_bundles: {  }
+field_type: dynamic_entity_reference

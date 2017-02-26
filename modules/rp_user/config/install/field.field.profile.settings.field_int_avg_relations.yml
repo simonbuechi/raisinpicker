@@ -1,0 +1,25 @@
+uuid: 91c37173-23ab-49f8-a5ed-a5007bbc2bca
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_int_avg_relations
+    - profile.type.settings
+id: profile.settings.field_int_avg_relations
+field_name: field_int_avg_relations
+entity_type: profile
+bundle: settings
+label: 'int avg relations'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: !!float 1
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

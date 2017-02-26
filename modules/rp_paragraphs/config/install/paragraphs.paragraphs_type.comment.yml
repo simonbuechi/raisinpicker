@@ -1,0 +1,7 @@
+uuid: 767ba3fe-1b20-458b-9ccb-808adece14ee
+langcode: en
+status: true
+dependencies: {  }
+id: comment
+label: Comment
+behavior_plugins: {  }

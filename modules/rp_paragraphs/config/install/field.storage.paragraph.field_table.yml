@@ -1,16 +1,16 @@
-uuid: fe35e3cf-1d2f-4aa8-bf15-d318cc2a190b
+uuid: e13fb85f-b4f9-47b8-ba9e-2797e8cf8fb6
 langcode: en
 status: true
 dependencies:
   module:
     - paragraphs
-    - text
-id: paragraph.field_descrip
-field_name: field_descrip
+    - tablefield
+id: paragraph.field_table
+field_name: field_table
 entity_type: paragraph
-type: text_long
+type: tablefield
 settings: {  }
-module: text
+module: tablefield
 locked: false
 cardinality: 1
 translatable: true

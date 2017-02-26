@@ -1,0 +1,25 @@
+uuid: 10a63776-2914-48cb-b6f5-62559f340ade
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_int_avg_edits
+    - profile.type.settings
+id: profile.settings.field_int_avg_edits
+field_name: field_int_avg_edits
+entity_type: profile
+bundle: settings
+label: 'int avg edits'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: !!float 1
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

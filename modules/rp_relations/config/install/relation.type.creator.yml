@@ -1,0 +1,16 @@
+uuid: 949919b5-7c62-4537-bb2e-f81648027f22
+langcode: en
+status: true
+dependencies: {  }
+id: creator
+label: 'is creator of'
+reverse_label: 'is created by'
+directional: true
+transitive: false
+r_unique: false
+min_arity: 2
+max_arity: 2
+source_bundles:
+  'node:*': 'node:*'
+target_bundles:
+  'node:*': 'node:*'

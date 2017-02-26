@@ -1,0 +1,27 @@
+uuid: 55fe7fa2-bd6c-4ef0-b23c-735328a0d387
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_review
+    - profile.type.settings
+  module:
+    - options
+id: profile.settings.field_review
+field_name: field_review
+entity_type: profile
+bundle: settings
+label: Review
+description: 'Select when to schedule reviews after a new node has been created'
+required: false
+translatable: false
+default_value:
+  -
+    value: 2w
+  -
+    value: 3m
+  -
+    value: 1y
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,21 @@
+uuid: c6b83119-8f53-42eb-ae27-4bb4e835bb82
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_channel
+    - profile.type.settings
+  module:
+    - options
+id: profile.settings.field_channel
+field_name: field_channel
+entity_type: profile
+bundle: settings
+label: Channel
+description: 'Select your notification channel'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,33 @@
+uuid: 6f3ec8b4-1121-4b7a-bdda-75bc72b628a1
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_content
+    - dynamic_entity_reference
+    - feeds
+    - file
+    - flag
+    - menu_link_content
+    - node
+    - paragraphs
+    - profile
+    - redirect
+    - relation
+    - shortcut
+    - taxonomy
+    - user
+id: relation.endpoints
+field_name: endpoints
+entity_type: relation
+type: dynamic_entity_reference
+settings:
+  exclude_entity_types: true
+  entity_type_ids: {  }
+module: dynamic_entity_reference
+locked: true
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

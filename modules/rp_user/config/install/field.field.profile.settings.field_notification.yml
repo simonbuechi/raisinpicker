@@ -1,0 +1,21 @@
+uuid: 1691b0d9-85ad-4d0e-8b67-f9efb6f1e7d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_notification
+    - profile.type.settings
+  module:
+    - options
+id: profile.settings.field_notification
+field_name: field_notification
+entity_type: profile
+bundle: settings
+label: Notification
+description: 'Select your notification triggers'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

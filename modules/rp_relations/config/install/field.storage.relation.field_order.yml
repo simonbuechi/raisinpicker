@@ -1,0 +1,20 @@
+uuid: f0298665-31b8-4f75-8538-9b126f6cd951
+langcode: en
+status: true
+dependencies:
+  module:
+    - relation
+id: relation.field_order
+field_name: field_order
+entity_type: relation
+type: decimal
+settings:
+  precision: 10
+  scale: 4
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

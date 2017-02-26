@@ -1,0 +1,25 @@
+uuid: c0255858-cec2-45c8-ba8e-ef7f08497502
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_int_avg_rating
+    - profile.type.settings
+id: profile.settings.field_int_avg_rating
+field_name: field_int_avg_rating
+entity_type: profile
+bundle: settings
+label: 'int avg rating'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: !!float 5
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

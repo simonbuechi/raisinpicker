@@ -1,7 +1,0 @@
-uuid: 92249578-888d-4218-8325-777b3ef45c10
-langcode: en
-status: true
-dependencies: {  }
-id: opinion
-label: Opinion
-behavior_plugins: {  }

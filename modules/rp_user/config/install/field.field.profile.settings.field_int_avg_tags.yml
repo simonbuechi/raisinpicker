@@ -1,0 +1,25 @@
+uuid: c09b8231-f1ab-475e-b1f3-376b74210132
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_int_avg_tags
+    - profile.type.settings
+id: profile.settings.field_int_avg_tags
+field_name: field_int_avg_tags
+entity_type: profile
+bundle: settings
+label: 'Int avg tags'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: !!float 1
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

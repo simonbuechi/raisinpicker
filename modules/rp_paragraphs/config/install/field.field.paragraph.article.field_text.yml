@@ -1,17 +1,17 @@
-uuid: 15bd6ab3-2863-4a43-9e84-13a9aaba9ec0
+uuid: 44228a3c-ade6-4513-b49c-94269895c42a
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_descrip
-    - paragraphs.paragraphs_type.opinion
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.article
   module:
     - text
-id: paragraph.opinion.field_descrip
-field_name: field_descrip
+id: paragraph.article.field_text
+field_name: field_text
 entity_type: paragraph
-bundle: opinion
-label: 'Opinion Text'
+bundle: article
+label: 'Article text'
 description: ''
 required: false
 translatable: true

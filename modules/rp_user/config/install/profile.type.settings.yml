@@ -1,0 +1,12 @@
+uuid: e7332ef8-2e11-40e0-a9b8-2afeeae28f41
+langcode: en
+status: true
+dependencies: {  }
+id: settings
+label: Settings
+registration: false
+multiple: false
+roles:
+  authenticated: authenticated
+  administrator: '0'
+weight: 0

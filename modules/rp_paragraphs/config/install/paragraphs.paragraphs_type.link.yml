@@ -1,7 +1,7 @@
-uuid: 530f83db-892e-4e86-af1f-054cd89ffb2e
+uuid: ab3385b3-a94a-4cac-bddb-888ee8d8ae35
 langcode: en
 status: true
 dependencies: {  }
-id: table
-label: Table
+id: link
+label: Link
 behavior_plugins: {  }

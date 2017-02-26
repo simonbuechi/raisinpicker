@@ -1,0 +1,20 @@
+uuid: c8ab78b0-88b3-4a43-8ed0-1d3712a3e891
+langcode: en
+status: true
+dependencies:
+  module:
+    - relation
+id: relation.field_rating
+field_name: field_rating
+entity_type: relation
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

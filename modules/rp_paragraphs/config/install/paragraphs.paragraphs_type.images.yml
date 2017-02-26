@@ -1,7 +1,7 @@
-uuid: 530f83db-892e-4e86-af1f-054cd89ffb2e
+uuid: 6ac19632-5ad3-4d45-9b46-742ac50f6356
 langcode: en
 status: true
 dependencies: {  }
-id: table
-label: Table
+id: images
+label: Images
 behavior_plugins: {  }

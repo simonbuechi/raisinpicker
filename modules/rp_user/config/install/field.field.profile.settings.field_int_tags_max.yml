@@ -1,0 +1,25 @@
+uuid: ff14b4dd-4dad-4d24-8c1f-50594dedf9a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.profile.field_int_tags_max
+    - profile.type.settings
+id: profile.settings.field_int_tags_max
+field_name: field_int_tags_max
+entity_type: profile
+bundle: settings
+label: 'int tags max'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 30
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
