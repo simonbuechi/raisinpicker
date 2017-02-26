@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Raisin Picker Views feature.
- */
-
-include_once 'raisin_picker_views.features.inc';
