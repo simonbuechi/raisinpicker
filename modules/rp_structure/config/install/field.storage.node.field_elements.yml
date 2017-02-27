@@ -5,6 +5,9 @@ dependencies:
     - entity_reference_revisions
     - node
     - paragraphs
+  enforced:
+    module:
+      - rp_structure
 id: node.field_elements
 field_name: field_elements
 entity_type: node

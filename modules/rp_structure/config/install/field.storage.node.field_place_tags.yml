@@ -4,6 +4,9 @@ dependencies:
   module:
     - node
     - taxonomy
+  enforced:
+    module:
+      - rp_structure
 id: node.field_place_tags
 field_name: field_place_tags
 entity_type: node

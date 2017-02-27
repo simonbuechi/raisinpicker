@@ -3,6 +3,9 @@ status: true
 dependencies:
   module:
     - node
+  enforced:
+    module:
+      - rp_structure
 id: node.field_rating
 field_name: field_rating
 entity_type: node
