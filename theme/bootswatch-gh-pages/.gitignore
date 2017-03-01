@@ -1,0 +1,8 @@
+.idea
+components
+node_modules
+bower_components
+build
+_site
+*.lock
+.sass-cache/
