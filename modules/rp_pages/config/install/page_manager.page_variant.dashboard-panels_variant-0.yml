@@ -1,0 +1,41 @@
+uuid: 187238c2-7deb-427e-846e-5affa9265c1b
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.dashboard
+    - views.view.finder
+  module:
+    - panels
+    - views
+id: dashboard-panels_variant-0
+label: Panels
+variant: panels_variant
+variant_settings:
+  blocks:
+    c670ae62-a513-4f04-a253-e3a00f0a6405:
+      id: 'views_block:finder-block_1'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: none
+      region: left
+      weight: 0
+      uuid: c670ae62-a513-4f04-a253-e3a00f0a6405
+      context_mapping: {  }
+  id: panels_variant
+  uuid: 0cee02fc-853d-4d09-994b-0599c54c6c87
+  label: null
+  weight: 0
+  layout: threecol_33_34_33
+  layout_settings: {  }
+  page_title: Dashboard
+  storage_type: page_manager
+  storage_id: dashboard-panels_variant-0
+  builder: ipe
+page: dashboard
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

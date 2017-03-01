@@ -1,0 +1,12 @@
+uuid: b4e0f5ed-21ad-4558-a31f-d4172a7233f1
+langcode: en
+status: true
+dependencies: {  }
+id: analytics
+label: Analytics
+description: ''
+use_admin_theme: false
+path: /analytics
+access_logic: and
+access_conditions: {  }
+parameters: {  }

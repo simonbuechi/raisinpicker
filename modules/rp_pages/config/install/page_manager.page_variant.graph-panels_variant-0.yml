@@ -1,0 +1,28 @@
+uuid: 91c3e5ac-2ad6-4f8d-882f-8d08aaf276a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.graph
+  module:
+    - panels
+id: graph-panels_variant-0
+label: Panels
+variant: panels_variant
+variant_settings:
+  blocks: {  }
+  id: panels_variant
+  uuid: 961f1b56-0a6c-4b0e-af35-3ca30752a3f3
+  label: null
+  weight: 0
+  layout: onecol
+  layout_settings: {  }
+  page_title: Graph
+  storage_type: page_manager
+  storage_id: graph-panels_variant-0
+  builder: standard
+page: graph
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

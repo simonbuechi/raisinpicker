@@ -1,0 +1,10 @@
+name: Raisin Picker Pages
+type: module
+description: Setup pages.
+version: 8.x-0.1
+core: 8.x
+package: Raisin Picker
+dependencies:
+  - rp_views
+  - panels
+  - page_manager

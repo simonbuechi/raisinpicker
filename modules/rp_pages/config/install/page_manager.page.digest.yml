@@ -1,0 +1,12 @@
+uuid: e47c08c9-1c58-47ca-88b7-9cb591c1c03f
+langcode: en
+status: true
+dependencies: {  }
+id: digest
+label: Digest
+description: 'Some statistics, charts, aggregated information.'
+use_admin_theme: false
+path: /digest
+access_logic: and
+access_conditions: {  }
+parameters: {  }

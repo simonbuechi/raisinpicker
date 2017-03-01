@@ -1,0 +1,43 @@
+uuid: 77834562-2d3f-43f0-a66f-16429f3db28f
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.digest
+  module:
+    - panels
+id: digest-panels_variant-0
+label: Panels
+variant: panels_variant
+variant_settings:
+  blocks: {  }
+  id: panels_variant
+  uuid: 11fe6f84-93ea-49f9-9291-a574f5e7c5bc
+  label: null
+  weight: 0
+  layout: ds_4col
+  layout_settings:
+    wrappers:
+      first: div
+      second: div
+      third: div
+      fourth: div
+    outer_wrapper: div
+    attributes: ''
+    link_attribute: ''
+    link_custom: ''
+    classes:
+      layout_class: {  }
+      first: {  }
+      second: {  }
+      third: {  }
+      fourth: {  }
+  page_title: Digest
+  storage_type: page_manager
+  storage_id: digest-panels_variant-0
+  builder: standard
+page: digest
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

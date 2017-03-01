@@ -1,0 +1,12 @@
+uuid: 8b3bfaf6-88b8-4352-a3f0-4f566321f806
+langcode: en
+status: true
+dependencies: {  }
+id: graph
+label: Graph
+description: 'Used for relation visualization graph using sigma.js'
+use_admin_theme: false
+path: /graph
+access_logic: and
+access_conditions: {  }
+parameters: {  }

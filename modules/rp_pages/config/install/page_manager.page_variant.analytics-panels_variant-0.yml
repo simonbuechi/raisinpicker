@@ -1,0 +1,28 @@
+uuid: 43161031-8625-4d48-b5c7-b75373e37641
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.analytics
+  module:
+    - panels
+id: analytics-panels_variant-0
+label: Panels
+variant: panels_variant
+variant_settings:
+  blocks: {  }
+  id: panels_variant
+  uuid: 32dabc47-f345-4240-a90b-c037fc6b7b18
+  label: null
+  weight: 0
+  layout: threecol_33_34_33
+  layout_settings: {  }
+  page_title: Analytics
+  storage_type: page_manager
+  storage_id: analytics-panels_variant-0
+  builder: standard
+page: analytics
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }
