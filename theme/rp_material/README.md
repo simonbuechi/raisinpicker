@@ -3,8 +3,8 @@
 <!-- @ingroup sub_theming -->
 # Starterkit
 
-lessc --clean-css less/style.less css/styles.min.css
-
+lessc --clean-css less/style.less css/style.min.css
+lessc less/style.less css/style.css
 
 
 
